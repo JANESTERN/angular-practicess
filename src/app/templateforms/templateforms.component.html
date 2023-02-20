@@ -1,0 +1,46 @@
+<div class="form_container">
+  <div class="image">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/2019-honda-civic-sedan-1558453497.jpg?resize=480:*" alt="">
+  </div>
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+    <h1>Please Fill the form!</h1>
+    <div ngModelGroup="personalData" >
+    <div class="form_group">
+      <label for="username">Username</label><br>
+      <input type="text" name="username" ngModel required #username="ngModel">
+      <span *ngIf="!username.valid && username.touched"class="error">Enter aUsername</span>
+    </div>
+    <div class="form_group">
+      <label for="email">Email</label><br>
+      <input type="Email" name="email" ngModel required email #email="ngModel" >
+      <span *ngIf="!email.valid && email.touched " class="error">Please Enter a Valid Email</span>
+    </div>
+    <div class="form_group">
+      <label for="phone">Phone</label><br>
+      <input type="text" name="phone" ngModel required #phone="ngModel">
+      <span *ngIf="!phone.valid && phone.touched" class="error"> Enter a valid phone number</span>
+    </div>
+  </div>
+    <div class="form_group">
+      <label for="role">Occupation</label><br>
+      <select name="role" ngModel required >
+        <option value="default">Full stack Java developer</option>
+        <option value="python">Full stack python developer</option>
+        <option value="typescript">Full stack typescript developer</option>
+        <option value="nodejs">Full stack nodejs developer</option>
+    
+      </select> <br>
+    </div>
+
+        <p> select Gender</p>
+      <div class="form_group" *ngFor="let g of genders">
+       <label> <input type="radio"[value]='g' name="gender" ngModel required/>{{g}}</label>
+      </div>
+    <div class="btn">
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+      <button type="reset">ResetForm</button>
+    </div>
+  </form>
+
+</div>
+<button (click)="prepopulate()">prepopulate</button>
