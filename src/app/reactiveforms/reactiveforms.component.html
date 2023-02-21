@@ -1,1 +1,49 @@
-<p>reactiveforms works!</p>
+<div class="reactive_container">
+    <div class="image">
+        <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt46bb009fcc79bcb6/63623939016efc5347f922d9/salah-nunez.jpg" alt="">
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submitData()">
+        <h1>Liverpool Registration form. Welcome to Anfield</h1>
+        <div formGroupName="personalDetails">
+            <div class="form_group">
+                <label for="username">Username</label><br>
+                <input type="text" formControlName="username">
+                <span class="error" *ngIf="!form.get('username')?.valid && form.get('username')?.touched">Please Enter a Valid Username</span>
+            </div>
+            <div class="form_group">
+                <label for="email">Email Adress</label><br>
+                <input type="email" formControlName="email">
+                <span class="error" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">
+                   <span *ngIf="form.get('email')!.errors!['required']">Please Input a Value</span>
+                   <span *ngIf="form.get('email')!.errors!['email']">Please Enter a Valid Email Address</span>
+                </span>
+            </div>
+            <div class="form_group">
+                <label for="phone">Phone</label><br>
+                <input type="text" formControlName="phone">
+                <span class="error" *ngIf="!form.get('phone')?.valid && form.get('phone')?.touched">Please Enter a Valid Phone Number</span>
+            </div>
+
+        </div>
+   
+        <div class="form_group">
+            <label for="position">Your Position</label><br>
+            <select formControlName="position">
+                <option value="midfield">midfield</option>
+                <option value="striker">Striker</option>
+                <option value="Defender">Defender</option>
+                <option value="Goalkeeper">Goalkeeper</option>
+            </select>      
+        </div>
+        <div class="form_group">
+            <label for="message">Message</label><br>
+            <textarea cols="30" rows="5" formControlName="message">
+            </textarea>
+            <span class="error" *ngIf="!form.get('username')?.valid && form.get('username')?.touched">Please Enter a Valid Username</span>
+        </div>
+        <div class="btn">
+            <button type="submit"> Submit</button>
+            <button type="Reset">Reset</button>
+        </div>
+    </form>
+</div>

@@ -14,17 +14,18 @@ export class TemplateformsComponent {
 
   submitForm() {
     console.log(this.form);
-
   }
   prepopulate() {
     this.form.setValue({
       role: "python",
-      gender: "male",
+      gender: "Male",
+ 
       personalData: {
-      phone: "07987777",
-      username: "wright",
-      email: "rightkii2@gmail.com",
-      }
+        phone: "07987777",
+        username: "wright",
+        email: "rightkii2@gmail.com",
+      },
+ 
 
     })
   }

@@ -1,0 +1,55 @@
+.reactive_container{
+    display: flex;
+    padding: 10px;
+    margin: 2%;
+    gap: 5px;
+    background-color: bisque;
+    width: 50%;
+    margin: auto;
+
+}
+.image img{
+    width: 350px;
+    height: 100%;
+}
+form{
+    width: 50%;
+    padding: 10px;
+
+
+}
+
+.form_group input,select,textarea{
+    padding: 10px;
+    width: 100%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 3%;
+
+}
+.btn button{
+    padding: 10px;
+    width: 20%;
+    border-radius: 1px solid green;
+}
+.form_group label{
+    font-size: 1.5em;
+    color: rosybrown;
+}
+
+.error{
+    color: red;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+select.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+textarea.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
