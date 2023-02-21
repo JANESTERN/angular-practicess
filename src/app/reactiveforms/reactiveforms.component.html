@@ -1,6 +1,7 @@
 <div class="reactive_container">
     <div class="image">
-        <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt46bb009fcc79bcb6/63623939016efc5347f922d9/salah-nunez.jpg" alt="">
+        <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt46bb009fcc79bcb6/63623939016efc5347f922d9/salah-nunez.jpg"
+            alt="">
     </div>
     <form [formGroup]="form" (ngSubmit)="submitData()">
         <h1>Liverpool Registration form. Welcome to Anfield</h1>
@@ -8,24 +9,26 @@
             <div class="form_group">
                 <label for="username">Username</label><br>
                 <input type="text" formControlName="username">
-                <span class="error" *ngIf="!form.get('username')?.valid && form.get('username')?.touched">Please Enter a Valid Username</span>
+                <span class="error" *ngIf="!form.get('personalDetails.username')?.valid && form.get('personalDetails.username')?.touched">   Enter a username
+               </span>
             </div>
             <div class="form_group">
                 <label for="email">Email Adress</label><br>
                 <input type="email" formControlName="email">
-                <span class="error" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">
-                   <span *ngIf="form.get('email')!.errors!['required']">Please Input a Value</span>
-                   <span *ngIf="form.get('email')!.errors!['email']">Please Enter a Valid Email Address</span>
+                <span *ngIf="!form.get('personalDetails.email')?.valid && form.get('personalDetails.email')?.touched" class="error" >
+                    <span *ngIf="form.get('personalDetails.email')!.errors!['required']">Please Input a Value</span>
+                    <span *ngIf="form.get('personalDetails.email')!.errors!['email']">Please Enter a Valid Email Address</span>
                 </span>
             </div>
             <div class="form_group">
                 <label for="phone">Phone</label><br>
                 <input type="text" formControlName="phone">
-                <span class="error" *ngIf="!form.get('phone')?.valid && form.get('phone')?.touched">Please Enter a Valid Phone Number</span>
+                <span class="error" *ngIf="!form.get('personalDetails.phone')?.valid && form.get('personalDetails.phone')?.touched">Please Enter a Valid
+                    Phone Number</span>
             </div>
 
         </div>
-   
+
         <div class="form_group">
             <label for="position">Your Position</label><br>
             <select formControlName="position">
@@ -33,17 +36,27 @@
                 <option value="striker">Striker</option>
                 <option value="Defender">Defender</option>
                 <option value="Goalkeeper">Goalkeeper</option>
-            </select>      
+            </select>
         </div>
         <div class="form_group">
             <label for="message">Message</label><br>
             <textarea cols="30" rows="5" formControlName="message">
             </textarea>
-            <span class="error" *ngIf="!form.get('username')?.valid && form.get('username')?.touched">Please Enter a Valid Username</span>
+            <span class="error" *ngIf="!form.get('message')?.valid && form.get('message')?.touched">Please Enter 
+                Your Message</span>
         </div>
-        <div class="btn">
+
+        <div class="form_Group" formArrayName="hobbies">
+
+            <button type="button" (click)="addHobbies()">Add a Hobbies</button><br>
             <button type="submit"> Submit</button>
-            <button type="Reset">Reset</button>
+            <div class="newcontrol" *ngFor="let controls of gethobbies() let i = index">
+                <input type="text" formControlName={{i}} />
+                <p class="close" (click)="removecontrol(i)">X</p>
+            </div>
+
         </div>
+
+        <button type="Reset">Reset</button>
     </form>
 </div>
