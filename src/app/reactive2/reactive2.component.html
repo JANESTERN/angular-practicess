@@ -1,0 +1,36 @@
+<form [formGroup]="reactiveform2" (ngSubmit)="submitData()">
+   <div class="form-container">
+      
+         <label for="fname">First Name:</label>
+         <input type="text" id="fname" placeholder="Enter your first name" formControlName="firstname"><br>
+            <span class="error" *ngIf="!reactiveform2.get('firstname')?.valid && reactiveform2.get('firstname')?.touched">Please Enter a Username</span>
+         <label for="lname">Second Name:</label>
+         <input type="text" id="lname"  placeholder="Enter your second name" formControlName="secondname"><br>
+
+         <label for="email">Email Adress:</label>
+         <input type="email" id="email" placeholder="Enter your email address" formControlName="emailaddress"><br>
+
+   <label for="country"> Select Country:</label>
+   <select name="country" id="country" formControlName="country">
+       <option value="Sudan">Sudan</option>
+       <option value="Kenya">Kenya</option>
+       <option value="Uganda">Uganda</option>
+       <option value="Other">Other</option>
+   </select><br>
+ <h3>Select your Gender:</h3>
+   <label for="Male">Male:</label>
+   <input type="radio" name="gender" id="Male" value="gender" formControlName="gender"><br>
+   <label for="Female">Female:</label>
+   <input type="radio" name="gender" id="Female" value="gender" formControlName="gender"><br>
+   <label for="other">Other:</label>
+   <input type="radio" name="gender" id="other" value="gender" formControlName="gender"><br>
+   <label for="message"> Subject:</label>
+   <textarea id="message" cols="30" rows="10" placeholder="
+   Enter your message" formControlName="message">
+Please Enter a message</span>
+</textarea><br>
+
+   <input type="submit" value="submit">
+   <input type="reset" value="reset">
+</div>
+</form>

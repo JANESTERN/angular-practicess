@@ -13,7 +13,7 @@ export class ReactiveformsComponent implements OnInit{
 
   usernames=['janestern', 'wright', 'Anonymous', 'Test']
 
-  emails=['janestern@gmail.com', 'wright.@gmail.com', 'Anonymous.@gmail.com', 'Test.@gmail.com']
+  // emails=['janestern@gmail.com', 'wright.@gmail.com', 'Anonymous.@gmail.com', 'Test.@gmail.com']
 
   ngOnInit(): void{
     this.form=new FormGroup({
@@ -53,20 +53,20 @@ unallowedPersons(control:FormControl): {[s:string]:boolean} | null{
  return null     
 }
 
-checkingExistingEmails(control:FormControl):Promise<{[s:string]:boolean} |null> | Observable <{[s:string]:boolean} |null>{
-  const promise=new Promise<{[s:string]:boolean} |null>(resolve,reject)=>{
-    setTimeout(()=>{
-      if(this.emails.indexOf(control.value)!==-1){
-        resolve({emailfound: true})
-      }else{
-        resolve(null)
-      }
+// checkingExistingEmails(control:FormControl):Promise<{[s:string]:boolean} |null> | Observable <{[s:string]:boolean} |null>{
+//   const promise=new Promise<{[s:string]:boolean} |null>(resolve,reject)=>{
+//     setTimeout(()=>{
+//       if(this.emails.indexOf(control.value)!==-1){
+//         resolve({emailfound: true})
+//       }else{
+//         resolve(null)
+//       }
 
-    },2000)
-  }
-  return promise
+//     },2000)
+//   }
+//   return promise
 
-}
+// }
 
 
 }

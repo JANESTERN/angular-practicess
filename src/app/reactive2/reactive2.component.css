@@ -1,0 +1,109 @@
+
+.form-container{
+    background-color: #FFDEB4;
+    padding: 20px;
+    width: 40%;
+    margin: 20px auto 40px auto ;
+    position: relative;
+    overflow-y: hidden;    
+}
+
+input[type=submit]{
+    width: 25%;
+    padding: 10px;
+    border: none;
+    color:white;
+    cursor: pointer;
+    margin: 20px auto 20px auto;
+    background-color: #6FEDD6;
+    font-size: 1rem;
+    border-radius: 20px; 
+   transition-duration: 2s;
+     
+}
+input[type="reset"]{
+    width: 25%;
+    padding: 10px;
+    border: none;
+    color:white;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #6FEDD6;
+    font-size: 1rem;
+    border-radius: 20px; 
+    float: right;
+
+}
+input[type=reset]:hover{
+    background-color:  #FF9551;
+}
+
+input[type=submit]:hover{
+    background-color: #FF9551;
+
+}
+
+input[type=email]:focus {
+    background-color: lightcyan;
+}
+input[type=text]:focus {
+   background-color: lightcyan;
+
+}
+input[type=password]:focus{
+    background-color: lightcyan;
+}
+
+input[type=text], select{
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    margin-left: 10px;
+    
+}
+textarea{
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    margin-left: 10px;
+    height: 200px;
+    resize: vertical;
+
+}
+input[type=password]{
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    margin-left: 10px;
+}
+input[type=email] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    margin-left: 10px;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+textarea.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+.error{
+    color: red;
+}
